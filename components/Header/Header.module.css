@@ -1,0 +1,45 @@
+.header {
+  border-bottom: 1px solid var(--badges);
+  padding: 14px 40px;
+  max-width: 1440px;
+  background: var(--badges);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--main);
+
+  transition: color cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.link:hover,
+.link:focus,
+.active {
+  color: var(--button);
+}
+
+.active {
+  color: var(--button-hover);
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    padding: 24px 120px;
+    max-width: 1440px;
+  }
+}

@@ -1,0 +1,93 @@
+.form {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 32px;
+  width: 640px;
+  min-height: 488px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.input,
+.inputError,
+.textarea {
+  border-radius: 12px;
+  padding: 12px 20px;
+  width: 576px;
+  height: 48px;
+  background: var(--inputs);
+  border: none;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--gray);
+
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.textarea {
+  resize: none;
+  height: 88px;
+}
+
+.submitBtn {
+  border: none;
+
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: var(--button);
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--white);
+
+  align-self: center;
+}
+
+.submitBtn:hover {
+  background: var(--button-hover);
+}
+
+.errorText {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffb0b0;
+}
