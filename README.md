@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 RentalCar
 
-## Getting Started
+**RentalCar** — це сучасний веб-додаток для компанії з оренди автомобілів. Додаток дозволяє користувачам переглядати каталог доступних авто, фільтрувати їх за різними критеріями, додавати до списку улюблених та оформлювати заявки на оренду.
 
-First, run the development server:
+Проєкт виконано з використанням **Next.js** та **TypeScript**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Технологічний стек
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Core:** [Next.js 15](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand)
+- **Networking:** [Axios](https://axios-http.com/)
+- **Styling:** CSS Modules
+- **Forms & Validation:** [React Hook Form](https://react-hook-form.com/), [Yup](https://github.com/jquense/yup)
+- **UI Components:** [React Datepicker](https://reactdatepicker.com/), [React Hot Toast](https://react-hot-toast.com/)
+- **Icons:** SVG Sprites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Основні функції
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Домашня сторінка:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    - Банер із переходом до каталогу.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Каталог автомобілів:**
 
-## Deploy on Vercel
+    - Відображення карток авто з фото, ціною та характеристиками.
+    - **Пагінація:** Кнопка "Load More" для довантаження наступних сторінок.
+    - **Фільтрація:** Можливість фільтрувати авто за брендом та ціною.
+    - **Обране:** Можливість додавати авто до улюблених (сердечко).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Детальна сторінка авто:**
+    - Детальна інформація про автомобіль (рік, пробіг, комплектація).
+    - Форма бронювання: Валідована форма для оренди авто з вибором дати через календар.
+    - Спливаюче повідомлення про успішну відправку форми.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Розробник
+
+Цей проєкт виконано як тестове завдання.
+
+- Daryna Diaiuk, darinadyadyuk11@gmail.com

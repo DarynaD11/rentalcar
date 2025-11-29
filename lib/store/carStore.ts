@@ -45,19 +45,9 @@ export const useCarStore = create<CarState>()(
             const totalPages = data.totalPages || 1;
 
             set((state) => {
-              let updatedCars;
-
-              if (isLoadMore) {
-                const uniqueNewCars = newCars.filter(
-                  (newCar: CarId) =>
-                    !state.cars.some(
-                      (existingCar) => existingCar.id === newCar.id
-                    )
-                );
-                updatedCars = [...state.cars, ...uniqueNewCars];
-              } else {
-                updatedCars = newCars;
-              }
+              const updatedCars = isLoadMore
+                ? [...state.cars, ...newCars]
+                : newCars;
 
               return {
                 cars: updatedCars,
