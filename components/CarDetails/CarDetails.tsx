@@ -22,13 +22,13 @@ export default async function CarDetails({ id }: CarPageProps) {
     <section className={css.cont}>
       <div className={css.left_box}>
         <div className={css.img_box}>
-          {/* <Image
+          <Image
             src={car.img}
             alt={`${car.brand} ${car.model}`}
             fill
             className={css.img}
             priority
-          /> */}
+          />
         </div>
         <div className={css.box_form}>
           <FormOrder />
@@ -43,82 +43,76 @@ export default async function CarDetails({ id }: CarPageProps) {
         </div>
 
         <div className={css.location_km}>
-          <svg>
-            <use></use>
-          </svg>
-          <p>{car.address}</p>
-          <span>{car.mileage.toLocaleString()} km</span>
-        </div>
-
-        <p style={{ lineHeight: "1.6", marginBottom: "20px" }}>
-          {car.description}
-        </p>
-
-        <h3 style={{ marginBottom: "10px" }}>Accessories:</h3>
-        <ul style={{ marginBottom: "20px", paddingLeft: "20px" }}>
-          {car.accessories.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-
-        <h3 style={{ marginBottom: "10px" }}>Rental Conditions:</h3>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-            marginBottom: "30px",
-          }}
-        >
-          {car.rentalConditions.map((condition, index) => (
-            <span
-              key={index}
-              style={{
-                background: "#f9f9f9",
-                border: "1px solid #ddd",
-                padding: "8px 14px",
-                borderRadius: "35px",
-              }}
-            >
-              {condition}
-            </span>
-          ))}
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <div>
-            <span
-              style={{
-                fontSize: "24px",
-                fontWeight: "bold",
-                color: "#3470FF",
-              }}
-            >
-              ${car.rentalPrice}
-            </span>
-            <span style={{ color: "#888" }}> / hour</span>{" "}
-            {/* Або day, як в API */}
+          <div className={css.location_svg_text}>
+            <svg className={css.location_svg}>
+              <use href="/icons/sprite.svg#icon-location"></use>
+            </svg>
+            <p className={css.address}>{car.address}</p>
           </div>
+          <p className={css.address}>{car.mileage.toLocaleString()} km</p>
+        </div>
 
-          <button
-            style={{
-              background: "#3470FF",
-              color: "white",
-              padding: "12px 50px",
-              borderRadius: "12px",
-              border: "none",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-          >
-            Rental Car
-          </button>
+        <p className={css.price}>${car.rentalPrice}</p>
+        <p className={css.descr}>{car.description}</p>
+
+        <div className={css.list_box}>
+          <h3 className={css.title_list}>Rental Conditions:</h3>
+          <ul>
+            {car.rentalConditions.map((condition, index) => (
+              <li key={index}>
+                <svg className={css.li_icon}>
+                  <use href="/icons/sprite.svg#icon-check"></use>
+                </svg>
+                {condition}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={css.list_box}>
+          <h3 className={css.title_list}>Car Specifications:</h3>
+          <ul className={css.car_details}>
+            <li>
+              <svg className={css.li_icon}>
+                <use href="/icons/sprite.svg#icon-calendar"></use>
+              </svg>
+              <p className={css.li_text}>Year: {car.year}</p>
+            </li>
+            <li>
+              <svg className={css.li_icon}>
+                <use href="/icons/sprite.svg#icon-car"></use>
+              </svg>
+              <p className={css.li_text}>Type: {car.type}</p>
+            </li>
+            <li>
+              <svg className={css.li_icon}>
+                <use href="/icons/sprite.svg#icon-fuel-pump"></use>
+              </svg>
+              <p className={css.li_text}>
+                Fuel Consumption: {car.fuelConsumption}
+              </p>
+            </li>
+            <li>
+              <svg className={css.li_icon}>
+                <use href="/icons/sprite.svg#icon-gear"></use>
+              </svg>
+              <p className={css.li_text}>Engine Size: {car.engineSize}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div className={css.list_box}>
+          <h3 className={css.title_list}>Accessories and functionalities:</h3>
+          <ul>
+            {car.accessories.map((item, index) => (
+              <li key={index}>
+                <svg className={css.li_icon}>
+                  <use href="/icons/sprite.svg#icon-check"></use>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

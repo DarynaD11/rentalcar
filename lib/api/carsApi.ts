@@ -20,8 +20,16 @@ export const fetchCars = async ({
   if (filters?.brand) {
     params.append("brand", filters.brand);
   }
-  if (filters?.price) {
-    params.append("rentalPrice", filters.price);
+  if (filters?.rentalPrice) {
+    params.append("rentalPrice", filters.rentalPrice);
+  }
+
+  if (filters?.mileageFrom) {
+    params.append("minMileage", filters.mileageFrom);
+  }
+
+  if (filters?.mileageTo) {
+    params.append("maxMileage", filters.mileageTo);
   }
 
   const { data } = await api.get<Cars>(`/cars?${params.toString()}`);

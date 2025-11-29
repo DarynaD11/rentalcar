@@ -26,7 +26,7 @@ export interface Cars {
 
 export interface Filter {
   brand?: string;
-  price?: string;
+  rentalPrice?: string;
   mileageFrom?: string;
   mileageTo?: string;
 }

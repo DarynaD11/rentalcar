@@ -18,9 +18,10 @@ interface CarState {
   setFilter: (key: keyof Filter, value: string) => void;
   toggleFavorite: (car: CarId) => void;
   resetCars: () => void;
+  setAllFilters: (filters: Filter) => void;
 }
 
-export const carStore = create<CarState>()(
+export const useCarStore = create<CarState>()(
   devtools(
     persist(
       (set, get) => ({
@@ -43,11 +44,27 @@ export const carStore = create<CarState>()(
             const newCars = data.cars || data;
             const totalPages = data.totalPages || 1;
 
-            set({
-              cars: isLoadMore ? [...cars, ...newCars] : newCars,
-              page: isLoadMore ? page + 1 : page,
-              totalPages: totalPages,
-              isLoading: false,
+            set((state) => {
+              let updatedCars;
+
+              if (isLoadMore) {
+                const uniqueNewCars = newCars.filter(
+                  (newCar: CarId) =>
+                    !state.cars.some(
+                      (existingCar) => existingCar.id === newCar.id
+                    )
+                );
+                updatedCars = [...state.cars, ...uniqueNewCars];
+              } else {
+                updatedCars = newCars;
+              }
+
+              return {
+                cars: updatedCars,
+                page: isLoadMore ? page + 1 : page,
+                totalPages: totalPages,
+                isLoading: false,
+              };
             });
           } catch (err) {
             let message = "Something went wrong";
@@ -74,6 +91,15 @@ export const carStore = create<CarState>()(
             filters: { ...state.filters, [key]: value },
             page: 1,
           }));
+          get().loadCars(false);
+        },
+
+        setAllFilters: (newFilters) => {
+          set({
+            filters: newFilters,
+            page: 1,
+            cars: [],
+          });
           get().loadCars(false);
         },
 

@@ -1,0 +1,117 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 276px;
+  height: 424px;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.cardImg {
+  object-fit: cover;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.model {
+  color: var(--button);
+}
+
+.cardPrice {
+  margin-left: 10px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  row-gap: 4px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+
+  margin-bottom: auto;
+}
+
+.divider {
+  color: var(--gray);
+}
+
+.learnMoreBtn {
+  display: block;
+  width: 100%;
+  width: 276px;
+  height: 44px;
+  padding: 12px;
+  background-color: var(--button);
+  border-radius: 12px;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 28px;
+
+  color: var(--white);
+}
+
+.learnMoreBtn:hover {
+  background-color: var(--button-hover);
+}
+
+.heartBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.heartIcon {
+  fill: var(--badges);
+  transition: all 0.3s;
+}
+
+.heartIconActive {
+  fill: var(--button);
+}

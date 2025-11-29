@@ -51,3 +51,7 @@
   line-height: 125%;
   color: var(--white);
 }
+
+.btn:hover {
+  background-color: var(--button-hover);
+}
